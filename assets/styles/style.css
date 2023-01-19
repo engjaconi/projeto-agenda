@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+:root {
+    --color1: #262626;
+    --color2: #404040;
+    --color3: #A6977B;
+    --color4: #D9D7CC;
+    --color5: #BFBEAA;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +17,17 @@
 body {
     width: 100%;
     height: 100%;
-    background-color: darkslategray;
+    background-color: var(--color1, #262626);
+    font-size: 1rem;
 }
 
 .header__title {
-    color: white;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: var(--color4, #D9D7CC);
     text-align: center;
     margin: 20px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .search__form form{
@@ -36,9 +44,9 @@ body {
     height: 30px;
     margin-bottom: 10px;
     border: none;
-    background: lightgray;
+    background: var(--color2, #404040);
     font-size: 20px;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--color4, #BFBEAA);
     padding: 0 30px;
 }
 
@@ -51,14 +59,16 @@ body {
     background: none;
     cursor: pointer;
     padding-left: 3px;
+    fill: var(--color4, #BFBEAA);
 }
 
 main {
-    width: 60%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 750px;
+    min-width: 600px;
     margin: auto;
     padding: 20px;
-    background-color: white;
+    background-color: var(--color5, #BFBEAA);
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -69,13 +79,15 @@ main {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
     text-align: center;
 }
 
-.form__title {
-    font-size: 1.5rem;
-    color: darkslategrey;
+.form__title, .contacts__title {
+    font-size: 1.2rem;
+    color: var(--color1);
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .section__registration form div{
@@ -84,35 +96,42 @@ main {
     gap: 5px;
     justify-content: space-between;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.section__registration input {
+    background-color: var(--color4, #BFBEAA);
+    border: 1px solid var(--color3, #A6977B);
+    border-radius: 3px;
+    padding: 1px;
+    color: var(--color2, #404040);
+    width: 30%;
+}
+
+.section__registration label {
+    color: var(--color2);
 }
 
 .section__registration form button {
-    margin: 5px 0;
+    margin: 10px 0 20px 0;
     padding: 5px;
     width: 100px;
     height: 30px;
     border: none;
     font-size: 1rem;
     font-weight: bold;
-    background-color: rgb(22, 124, 119);
-    color: white;
+    background-color: var(--color2, #404040);
+    color: var(--color4);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
 
 .section__registration form button:hover {
-    background-color: rgb(32, 177, 169);
+    background-color: var(--color1, #262626);
 }
 
 #email {
     margin-left: -4px;
-}
-
-.contacts__title {
-    margin: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: darkslategray;
 }
 
 .contacts__list {
@@ -127,21 +146,22 @@ table {
 table, th, tr, td {
     border: 1px solid black;
     border-collapse: collapse;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
 thead {
-    background-color: darkslategray;
-    color: white;
+    background-color: var(--color2, #404040);
+    color: var(--color4, #BFBEAA);
 }
 
 tr img {
     padding-top: 8px;
 }
 
-.no-contacts {
-    font-size: 1.1rem;
+#no-contacts {
+    font-size: 1rem;
     text-align: center;
-    color: rgb(209, 49, 49);
+    margin: 10px;
+    color: var(--color2, #404040);
 }

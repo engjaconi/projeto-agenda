@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="header">
         <h1 class="header__title">Agenda Telefônica</h1>
         <section class="search__form">
-            <form id="search" action="/" type="get">
+            <form id="search" action="./index.html" type="get">
                 <input type="text" name="search" id="input__search">
                 <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875Z"/></svg>
@@ -22,7 +23,7 @@
     <main>
         <section class="section__registration">
             <h2 class="form__title">Cadastro</h2>
-            <form id="registration" action="/" autocomplete="on" type="post">
+            <form id="registration" action="./index.html" autocomplete="on" type="post">
                 <div>
                     <label for="name">Nome:</label>
                     <input type="text" name="name" id="name" required min="2">
@@ -42,7 +43,7 @@
         <section class="section_contacts">
             <h2 class="contacts__title">Contatos</h2>
     
-            <p class="no-contacts">Não há nenhum contato cadastrado!!!</p> 
+            <p id="no-contacts">Não há nenhum contato cadastrado!!!</p> 
             <table>
                 <thead>
                     <tr>

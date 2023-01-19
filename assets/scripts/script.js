@@ -1,5 +1,5 @@
 const localStorage = window.localStorage;
-const tableContacts = document.querySelector('tbody');
+const tableBody = document.querySelector('tbody');
 const formAddContact = document.querySelector('#registration');
 const formSearch = document.querySelector('#search');
 
@@ -19,17 +19,17 @@ formAddContact.addEventListener('submit', (event) =>  {
     };
 
     addContact(contact);
-    window.location.href = '/';
+    window.location.href = './index.html';
 });
 
 function addContact(contact) {
-    if(!localStorage.getItem('agenda')) {
-        let agenda = [contact];
-        localStorage.setItem('agenda', JSON.stringify(agenda));
+    if(!localStorage.getItem('schedule')) {
+        let schedule = [contact];
+        localStorage.setItem('schedule', JSON.stringify(schedule));
     } else {
-        let agenda = JSON.parse(localStorage.getItem('agenda'));
-        agenda.push(contact);
-        localStorage.setItem('agenda', JSON.stringify(agenda));
+        let schedule = JSON.parse(localStorage.getItem('schedule'));
+        schedule.push(contact);
+        localStorage.setItem('schedule', JSON.stringify(schedule));
     }
 
 }
@@ -43,7 +43,7 @@ formSearch.addEventListener('submit', (event) =>  {
 
 function searchContact(search) {
     populateTable();
-    if(!tableContacts.hasChildNodes()) {
+    if(!tableBody.hasChildNodes()) {
         alert('Não há contatos salvos para serem pesquisados. Adicione um contato!');
         return;
     } else {
@@ -65,14 +65,14 @@ function searchContact(search) {
 }
 
 function populateTable() {
-    if(tableContacts) {
-       for(let i = tableContacts.children.length -1; i>= 0; i--) {
-            tableContacts.deleteRow(i);
+    if(tableBody) {
+       for(let i = tableBody.children.length -1; i>= 0; i--) {
+            tableBody.deleteRow(i);
        } 
     } 
 
-    if(localStorage.getItem('agenda')) {
-        let myContacts = JSON.parse(localStorage.getItem('agenda'));
+    if(localStorage.getItem('schedule')) {
+        let myContacts = JSON.parse(localStorage.getItem('schedule'));
         
         for(let i=0; i< myContacts.length; i++){
             let tr = document.createElement('tr');
@@ -87,7 +87,7 @@ function populateTable() {
             tdTel.textContent = myContacts[i].tel;
             tdEmail.textContent = myContacts[i].email;
             tdAddress.textContent = myContacts[i].address;
-            imgWhats.src = '../images/whatsapp.png';
+            imgWhats.src = '../assets/images/whatsapp.png';
             linkWhats.href = `https://api.whatsapp.com/send?phone=${(myContacts[i].tel)}`;
             linkWhats.target = '_blank';
     
@@ -97,13 +97,13 @@ function populateTable() {
             tr.appendChild(tdEmail);
             tr.appendChild(tdAddress);
             tr.appendChild(linkWhats).append(imgWhats);
-            tableContacts.append(tr);
+            tableBody.append(tr);
             // Remove mesage no contacts in HTML
             const noContacts = document.getElementById("no-contacts");
             noContacts.style.display = 'none'
         };
     } else {
-        tableContacts.parentElement.style.display = 'none';
+        tableBody.parentElement.style.display = 'none';
     }
 }
 

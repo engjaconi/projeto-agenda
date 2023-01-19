@@ -91,14 +91,13 @@ function populateTable() {
             linkWhats.href = `https://api.whatsapp.com/send?phone=${(myContacts[i].tel)}`;
             linkWhats.target = '_blank';
     
-             
             tr.appendChild(tdName);
             tr.appendChild(tdTel);
             tr.appendChild(tdEmail);
             tr.appendChild(tdAddress);
             tr.appendChild(linkWhats).append(imgWhats);
             tableBody.append(tr);
-            // Remove mesage no contacts in HTML
+            
             const noContacts = document.getElementById("no-contacts");
             noContacts.style.display = 'none'
         };

@@ -88,7 +88,7 @@ function populateTable() {
             tdTel.textContent = myContacts[i].tel;
             tdEmail.textContent = myContacts[i].email;
             tdAddress.textContent = myContacts[i].address;
-            imgWhats.src = '../assets/images/whatsapp.png';
+            imgWhats.src = '../images/whatsapp.png';
             linkWhats.href = `https://api.whatsapp.com/send?phone=${(myContacts[i].tel)}`;
             linkWhats.target = '_blank';
 

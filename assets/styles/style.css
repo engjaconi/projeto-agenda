@@ -106,7 +106,7 @@ main {
     border-radius: 3px;
     padding: 1px;
     color: var(--color2, #404040);
-    width: 100%;
+    width: 200px;
     height: 25px;
 }
 
@@ -130,10 +130,6 @@ main {
 
 .section__registration form button:hover {
     background-color: var(--color1, #262626);
-}
-
-#email {
-    margin-left: -4px;
 }
 
 .contacts__list {
@@ -188,10 +184,19 @@ tr img {
     }
 
     .section__registration form div {
+        display: flex;
         flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #email {
+        margin-left: -4px;
     }
 
     .section__registration input {
-        width: 30%;
+        width: 250px;
     }
 }
